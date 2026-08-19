@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "raining",
+  "main": "./worker/index.js",
   "compatibility_date": "2026-08-19",
   "workers_dev": false,
   "preview_urls": false,
@@ -9,7 +10,15 @@
     "head_sampling_rate": 1
   },
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/webhook",
+      "/api/*"
+    ]
+  },
+  "vars": {
+    "WHATSAPP_API_VERSION": "v24.0"
   },
   "routes": [
     {
