@@ -6,7 +6,7 @@
   "description": "Mapa meteorológico gratuito de Rurrenabaque, Bolívia",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node --check src/app.js && node --check scripts/build.mjs",
+    "check": "node --check src/app.js && node --check worker/index.js && node --check scripts/build.mjs",
     "preview": "wrangler dev",
     "deploy": "wrangler deploy"
   },
